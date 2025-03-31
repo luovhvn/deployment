@@ -1,0 +1,178 @@
+/* Variables globales */
+:root {
+  --color-titulo: #ffcc00;
+  --color-texto: #ffffff;
+  --color-fondo-texto: #333;
+  --bg-hover: #444;
+  --transition-time: 0.3s;
+}
+
+/* Globales */
+body {
+    background-color: black;
+    color: var(--color-texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 1. Estilos estáticos */
+.static-title {
+    color: var(--color-titulo);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+    border-bottom: 2px solid var(--color-titulo);
+}
+
+.static-paragraph {
+    background-color: var(--color-fondo-texto);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* 2.1. Transiciones en párrafos */
+.hover-no-trans:hover {
+    color: red;
+    font-size: 20px;
+}
+  
+.hover-trans {
+    transition: color var(--transition-time), font-size var(--transition-time);
+}
+  
+.hover-trans:hover {
+    color: cyan;
+    font-size: 20px;
+}
+
+/* 2.2. Transiciones en botones */
+.button-no-trans:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px red;
+}
+  
+.button-trans {
+    transition: all var(--transition-time);
+}
+  
+.button-trans:hover {
+    background-color: green;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px green;
+}
+
+/* 2.3. Animaciones y keyframes */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+  
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.anim-trans {
+  width: 600px;
+  transform-origin: left center;
+  animation: pulse 2s infinite;
+}
+
+.anim-trans:hover {
+  border: 2px solid cyan;
+}
+
+@keyframes hoverAnim {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.hover-anim {
+  transform-origin: left center;
+  animation: baseAnim 3s infinite;
+  transition: all var(--transition-time);
+}
+
+.hover-anim:hover {
+  animation: hoverAnim 3s infinite;
+  color: yellow;
+  font-size: 22px;
+}
+
+/* 3. Múltiples clases y prioridad */
+.conflict1 {
+    color: red;
+}
+  
+.conflict2 {
+    color: green;
+}
+
+/* 5. Grid de ejemplo */
+.grid-container {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.grid-row {
+    display: table-row;
+}
+  
+.grid-header, .grid-item {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid white;
+    text-align: center;
+    width: 25%;
+}
+  
+.grid-header {
+    font-weight: bold;
+    background-color: var(--bg-hover);
+}
+  
+.grid-item {
+    background-color: var(--color-fondo-texto);
+}
+  
+.grid-item.manga {
+    display: table-cell;
+    background-color: #8b0000;
+}
+  
+.grid-item.anime {
+    display: table-cell;
+    background-color: #00008b;
+}
+  
+.grid-item.videojuego {
+    display: table-cell;
+    background-color: #006400;
+}
+  
+.grid-item.merch {
+    display: table-cell;
+    background-color: #4b0082;
+}
+  
+.grid-item:hover {
+    background-color: var(--bg-hover);
+    transform: scale(1.05);
+}
+
+/* 4. Video Intro: Animación en Hover */
+@keyframes videoHover {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(10deg); }
+    50% { transform: scale(1) rotate(0deg); }
+    75% { transform: scale(1.1) rotate(-10deg); }
+}
+  
+.video-container:hover video {
+    animation: videoHover 2s infinite;
+}

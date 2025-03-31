@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Examen Progresivo de CSS</title>
+  
+  <!-- Vinculación del CSS Externo -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Estilos Internos: Se proporciona un ejemplo de excepción a nivel de cabecera -->
+  <style>
+    /* Ejemplo: El estilo definido en la cabecera (para el elemento con id "interno")
+       debe tener prioridad sobre el CSS externo. */
+    #interno {
+      background-color: #555;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Examen Progresivo de CSS</h1>
+    <p>
+      Este examen evalúa tu dominio en estilos estáticos, efectos de hover, transiciones, animaciones y en el manejo de la cascada.
+      Cada elemento contiene instrucciones específicas que indican qué propiedades aplicar.
+    </p>
+  </header>
+  
+  <!-- SECCIÓN 1: Estilos Estáticos -->
+  <section id="estilos-generales">
+    <h2 class="static-title">SOY TITULO 1 (Estilo General aplicado mediante clase)</h2>
+    <p class="static-paragraph">
+      SOY PÁRRAFO 1. Aplica la clase "static-paragraph" para demostrar que tanto este párrafo como el título comparten el mismo estilo (aplicado sobre la etiqueta).
+    </p>
+    <h2 class="static-title">SOY TITULO 2 (Estilo General aplicado directamente a la etiqueta)</h2>
+    <p class="static-paragraph">
+      SOY PÁRRAFO 2. Asegúrate de que este párrafo se muestre en el mismo estilo que el anterior.
+    </p>
+  </section>
+  
+  <!-- SECCIÓN 2: Efectos Hover en Párrafos -->
+  <section id="hover-parrafos">
+    <h2 class="static-title">Efectos Hover en Párrafos</h2>
+    <!-- 2.1: Hover sin transición -->
+    <p class="hover-no-trans">
+      SOY PÁRRAFO CON HOVER SIN TRANSICIÓN. (El cambio ocurre de golpe en color y tamaño).
+    </p>
+    <!-- 2.2: Hover con transición suave -->
+    <p class="hover-trans">
+      SOY PÁRRAFO CON HOVER CON TRANSICIÓN. (El cambio en color y tamaño se realiza suavemente gracias a la propiedad transition).
+    </p>
+  </section>
+  
+  <!-- SECCIÓN 3: Efectos Hover en Botones -->
+  <section id="hover-botones">
+    <h2 class="static-title">Efectos Hover en Botones</h2>
+    <!-- 3.1: Hover en botón sin transición -->
+    <button class="button-no-trans">
+      BOTÓN (HOVER SIN TRANSICIÓN)
+    </button>
+    <!-- 3.2: Hover en botón con transición suave -->
+    <button class="button-trans">
+      BOTÓN (HOVER CON TRANSICIÓN)
+    </button>
+  </section>
+  
+  <!-- SECCIÓN 4: Animaciones -->
+  <section id="animaciones">
+    <h2 class="static-title">Animaciones</h2>
+    <!-- 4.1: Animación continua en párrafo (pulso)
+         Fija el ancho del cuadro para que sólo se agrande el texto.
+         La animación se ancla a la izquierda para evitar desbordamiento. -->
+    <p class="anim-trans">
+      SOY PÁRRAFO CON ANIMACIÓN CONTINUA (PULSO) APLICADA DESDE LA IZQUIERDA. Mi animación de pulso se ejecuta en loop infinito, pero el ancho del cuadro está fijado para que sólo se agrande el texto. Al hacer hover, mi borde cambia de color suavemente.
+    </p>
+    <!-- 4.2: Hover con animación en párrafo.
+         El estado base está animado (cíclico) y, al hacer hover, transiciona suavemente a un nuevo estilo.
+         Se ancla a la izquierda para evitar desbordamiento. -->
+    <p class="hover-anim">
+      SOY PÁRRAFO CON ANIMACIÓN ACTIVADA AL PASAR EL RATO. Mi estado base está animado y, al hacer hover, transiciono suavemente a un nuevo estilo.
+    </p>
+  </section>
+  
+  <!-- SECCIÓN 5: Múltiples Clases y Excepciones Inline -->
+  <section id="multiclases">
+    <h2 class="static-title">Múltiples Clases y Excepciones Inline</h2>
+    <p class="conflict1 conflict2" style="color: purple;">
+      SOY UN ELEMENTO CON CLASES CONFLICTIVAS (conflict1 y conflict2). Para que aparezca en color púrpura, añade inline: style="color: purple;".
+    </p>
+  </section>
+  
+  <!-- SECCIÓN 6: Video Intro con Animación en Hover -->
+  <section id="video-intro">
+    <h2 class="static-title">Video Intro</h2>
+    <div class="video-container">
+      <video src="intro.mp4" controls width="640" height="360" style="box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+        Tu navegador no soporta el elemento de video.
+      </video>
+    </div>
+    <p>
+      Al pasar el ratón sobre el video (o sobre su contenedor), se activa una animación que lo agranda a 1.1 su tamaño y lo rota hasta 10° en sentido horario, vuelve a su estado original, luego se agranda y rota 10° en sentido antihorario, y regresa a su estado inicial, en un ciclo infinito sin saltos.
+    </p>
+  </section>
+  
+  <!-- SECCIÓN 7: Grid de Ejemplo con Animaciones en Cabeceras y Celdas -->
+  <section id="grid-demo">
+    <h2 class="static-title">Grid de Ejemplo</h2>
+    <div class="grid-container">
+      <!-- Cabeceras de columnas -->
+      <div class="grid-header">Columna 1</div>
+      <div class="grid-header">Columna 2</div>
+      <div class="grid-header">Columna 3</div>
+      <div class="grid-header">Columna 4</div>
+      
+      <!-- Filas de contenido -->
+      <div class="grid-item manga">Elemento Manga</div>
+      <div class="grid-item anime">Elemento Anime</div>
+      <div class="grid-item videojuego">Elemento Videojuegos</div>
+      <div class="grid-item merch">Elemento Merchandising</div>
+      
+      <div class="grid-item manga">Elemento Manga</div>
+      <div class="grid-item anime">Elemento Anime</div>
+      <div class="grid-item videojuego">Elemento Videojuegos</div>
+      <div class="grid-item merch">Elemento Merchandising</div>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Examen Progresivo de CSS. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
